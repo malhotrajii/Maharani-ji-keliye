@@ -15,6 +15,7 @@
             overflow: hidden;
             font-family: 'Arial', sans-serif;
             color: #fff;
+            position: relative;
         }
 
         .login-container {
@@ -157,6 +158,39 @@
                 opacity: 1;
             }
         }
+
+        /* Butterfly Styles */
+        .butterfly {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-image: url('R.png');
+            background-size: cover;
+            animation: fly 10s infinite linear, flutter 0.3s infinite alternate;
+        }
+
+        .butterfly:nth-child(2) {
+            background-image: url('OIP-removebg-preview.png');
+        }
+
+        .butterfly:nth-child(3) {
+            background-image: url('butterfly_PNG1041.png');
+        }
+
+        /* Butterfly Flight Path */
+        @keyframes fly {
+            0% { top: 10%; left: 10%; transform: rotate(0deg); }
+            25% { top: 30%; left: 60%; transform: rotate(90deg); }
+            50% { top: 60%; left: 90%; transform: rotate(180deg); }
+            75% { top: 80%; left: 40%; transform: rotate(270deg); }
+            100% { top: 10%; left: 10%; transform: rotate(360deg); }
+        }
+
+        /* Butterfly Flutter Animation */
+        @keyframes flutter {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
     </style>
 </head>
 <body>
@@ -195,6 +229,16 @@
     </div>
 
     <script>
+        // Create butterfly elements dynamically
+        function createButterflies() {
+            for (let i = 0; i < 3; i++) {
+                const butterfly = document.createElement('div');
+                butterfly.classList.add('butterfly');
+                document.body.appendChild(butterfly);
+            }
+        }
+        createButterflies();
+
         function checkPassword() {
             const password = document.getElementById('password').value;
             const correctPassword = 'ashmita';
