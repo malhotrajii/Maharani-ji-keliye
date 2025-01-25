@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For my RADHA</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle, #ff758c, #ff7eb3, #fbb1bd);
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+        }
+
+        .login-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .login-container input {
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            margin-bottom: 10px;
+        }
+
+        .login-container button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background: #ff4d6d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .login-container button:hover {
+            background: #ff2d4d;
+        }
+
+        .container {
+            display: none; /* Hidden until login is successful */
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .message {
+            flex: 3;
+            max-width: 300px;
+            margin-right: 20px;
+            font-size: 1.2rem;
+            text-align: left;
+            font-family: 'Georgia', serif;
+            color: #fff;
+            line-height: 1.3;
+            letter-spacing: 0.05rem;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .heart-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+        }
+
+        .heart {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            background-color: #ff4d6d;
+            animation: beat 1.2s infinite;
+            clip-path: path("M 75 30 C 75 -10, 150 -10, 150 40 C 150 80, 75 140, 75 140 C 75 140, 0 80, 0 40 C 0 -10, 75 -10, 75 30 Z");
+            box-shadow: 0 0 30px rgba(255, 77, 109, 0.8), 0 0 50px rgba(255, 77, 109, 0.4);
+        }
+
+        @keyframes beat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .name {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            font-size: 1.5rem;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.1rem;
+            animation: riseAndFade 1.5s infinite;
+        }
+
+        @keyframes riseAndFade {
+            0% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0;
+            }
+            50% {
+                transform: translate(-50%, -120%) scale(1.1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -200%) scale(1.3);
+                opacity: 0;
+            }
+        }
+
+        .sparkles {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #fff;
+            opacity: 0.8;
+            animation: sparkle 2s infinite ease-in-out;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                transform: scale(0.5);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Form -->
+    <div class="login-container" id="login">
+        <h2>Who is the most beautiful girl in the world?</h2>
+        <input type="password" id="password" placeholder="Enter name" required>
+        <button onclick="checkPassword()">Chalo kholo</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container" id="content">
+        <div class="message">
+            I fell so happy ki tum sath ho 😄<br>
+            I feel so happy to call you my girlfriend😇 <br>
+            The one and only Ashmita Dusodia is my girlfriend<br>
+            Mere dil ki dhadkan bhi tere geet gati h 🎶🎶<br>
+            Pal pal dil ke paas tum rehte ho<br>
+            Love you so much my moon 🤍🤍🤍<br>
+            May your day be as beautiful as you, sweetheart🩷.<br>
+            Loving you is more important to me than breathing<br>
+            I will love you forever♾️<br>
+            I am so grateful to be loved by you<br>
+            I have the best partner in the universe.🌷🌷🌷
+        </div>
+
+        <div class="heart-container">
+            <div class="heart">
+                <div class="name">ASHMITA</div>
+                <div class="sparkles" style="top: 30%; left: 40%; animation-delay: 0.2s;"></div>
+                <div class="sparkles" style="top: 70%; left: 60%; animation-delay: 0.5s;"></div>
+                <div class="sparkles" style="top: 50%; left: 80%; animation-delay: 0.8s;"></div>
+                <div class="sparkles" style="top: 20%; left: 50%; animation-delay: 1.1s;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const correctPassword = 'ashmita';
+
+            if (password === correctPassword) {
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('content').style.display = 'flex';
+            } else {
+                alert('Incorrect Password! Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>
